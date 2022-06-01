@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+class Car
+{
+     std::string model;
+    std::string type;
+    int         id;
+    std::string owner;
+public:
+
+    Car() = default;
+    
+    Car(
+           /* params */
+       )
+       :
+       /* set params */
+    {}
+    
+    void            print_info()       const;
+   
+    void            set_info();
+    
+    std::string     ToString();
+    
+    bool            Equals(const Car&) const;
+    
+};
+
+int main()
+{
+    Car car;
+}
