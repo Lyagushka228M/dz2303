@@ -1,33 +1,44 @@
 #include <iostream>
 #include <string>
-class Car
-{
-     std::string model;
-    std::string type;
-    int         id;
-    std::string owner;
-public:
+using namespace std;
 
-    Car() = default;
-    
-    Car(
-           /* params */
-       )
-       :
-       /* set params */
+class Car {
+private:
+    string driver_;
+    string color_;
+    unsigned int year_;
+public:
+    Car()
+    {
+        driver_ = "";
+        color_ = "";
+        year_ = 1800;
+    }
+
+    Car(const std::string& driver, const std::string& color, unsigned int year)
+    {
+        driver_ = driver;
+        color_ = color;
+        year_ = year;
+    }
+
+    virtual ~Car()
     {}
-    
-    void            print_info()       const;
-   
-    void            set_info();
-    
-    std::string     ToString();
-    
-    bool            Equals(const Car&) const;
-    
+
+    void setDriver(const std::string& driver)
+    {
+        driver_ = driver;
+    }
+
+    string getDriver() const
+    {
+        return driver_;
+    }
 };
 
 int main()
 {
-    Car car;
+    Car a("Petrov", "Green", 1997);
+    cout << a.getDriver() << std::endl;
+    return 0;
 }
